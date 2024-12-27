@@ -27,7 +27,7 @@ const Navbar = () => {
             style={{ height: 45, width: 45 }}
           />
           <p className="text-[20px] font-bold cursor-pointer">
-            <span>Software Developer</span>
+            <span>Shibo Wang Portfolio</span>
           </p>
         </Link>
         <ul className="list-none hidden sm:flex flex-row gap-10">

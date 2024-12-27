@@ -20,11 +20,25 @@ import {
   incident,
   hr,
   threejs,
+  python,
   aws,
   php,
   azure,
   server,
   vuejs,
+  java,
+  csharp,
+  phone,
+  deeplearning,
+  apci,
+  avondx,
+  clbp,
+  mobileHealth,
+  rtds,
+  bci,
+  Centennial,
+  wimtach,
+  healthcare
 } from "../assets";
 
 export const navLinks = [
@@ -52,21 +66,30 @@ const services = [
     icon: htmlicon,
   },
   {
-    title: "PHP & Java & C#",
+    title: "Python & Java & C#",
     icon: coding,
   },
   {
     title: "Aws & Azure",
     icon: server,
   },
+  {
+    title: "Mobile Development",
+    icon: phone,
+  },
+  {
+    title: "Machine Learning",
+    icon: deeplearning,
+  },
 ];
 
 const technologies = [
-  { name: "Vue.js", icon: vuejs },
-  { name: "PHP", icon: php },
+  { name: "Vuejs", icon: vuejs },
+  { name: "Python", icon: python },
   { name: "Aws", icon: aws },
   { name: "Azure", icon: azure },
-
+  { name: "Java", icon: java },
+  { name: "C#", icon: csharp },
   {
     name: "HTML 5",
     icon: html,
@@ -100,111 +123,222 @@ const technologies = [
     name: "git",
     icon: git,
   },
-  {
-    name: "figma",
-    icon: figma,
-  },
+  // {
+  //   name: "figma",
+  //   icon: figma,
+  // },
 ];
 
 const experiences = [
   {
-    title: "I&IT Digital Assistant",
-    company_name: "Government of Ontario, Cyber Security Division",
-    icon: OPS,
+    title: "Software Engineering Research Assistant (Co-op)",
+    company_name: "Healthcare Systems R&A Inc.\nRDTS Project",
+    icon: healthcare,
     iconBg: "#FFFFFF",
-    date: "September 2023 - Current",
+    date: "May 2023 - August 2023",
     points: [
-      "Develop, test, and implement codingsites using JavaScript, HTML, CSS, Vue.js, and PHP, ensuring adherence to AODA accessibility standards. Maintained codingsites, addressed bugs, implemented new features.",
-      " Assist in graphic design tasks, utilizing Photoshop and Illustrator to create mock-ups and illustrations for codingsite designs.",
+      "Implemented plot visualization and data representation using Python and OpenCV.",
+      "Developed baseline functionality for noise reduction and increased pixel intensity for better image clarity.",
+      "Automated image processing workflows to enhance efficiency.",
+      "Conducted user testing to refine application features based on feedback.",
+      "Enhanced accuracy and reliability of band detection and quantification by 50% using OpenCV."
     ],
   },
   {
-    title: "Customer Service (Part-time)",
-    company_name: "Tim Hortons",
-    icon: timhortons,
+    title: "Software Engineering Research Assistant (Co-op)",
+    company_name: "Healthcare Systems R&A Inc.\nBCI Project",
+    icon: healthcare,
+    iconBg: "#FFFFFF",
+    date: "August 2023 - September 2023",
+    points: [
+      "Conducted research and tuned CNN, RNN, and XGBoost models to classify EEG data into motor imageries, achieving significant accuracy improvements.",
+      "Analyzed limitations in existing models, particularly in capturing time series aspects of EEG signals.",
+      "Experimented with various datasets (8, 16, and 64 electrodes) to enhance model performance, utilizing Python and machine learning libraries for data preprocessing and organization.",
+    ],
+  },
+  {
+    title: "Software Engineering Research Assistant (Co-op)",
+    company_name: "Healthcare Systems R&A Inc.\nMobileHealth Project",
+    icon: healthcare,
+    iconBg: "#FFFFFF",
+    date: "September 2023 - December 2023",
+    points: [
+      "Developed and tested multiple machine learning models, integrating predictive models into a mobile app to aid in early diagnosis.",
+      "Conducted data exploration and visualization using the DUKECATHR dataset, highlighting imbalances for better understanding.",
+      "Collaborated with cross-functional teams to integrate predictive models into the mobile app.",
+      "Improved model performance by balancing accuracy, precision, recall, and F1 values, enhancing model reliability by 30%."
+    ],
+  },
+  {
+    title: "Software Engineering Research Assistant (Co-op)",
+    company_name: "Healthcare Systems R&A Inc.\nCLBP Project",
+    icon: healthcare,
+    iconBg: "#FFFFFF",
+    date: "May 2024 - September 2024",
+    points: [
+      "Increased 25-Landmark Model accuracy using customized data augmentation methods.",
+      "Implemented custom methods to enhance masked image heatmap keypoint detection models.",
+      "Researched and applied advanced machine learning techniques to improve detection accuracy.",
+      "Coordinated with healthcare professionals to refine detection algorithms and user interfaces.",
+      "Improved model accuracy from 73% to 96%, enhancing keypoint prediction reliability and precision."
+    ],
+  },
+  {
+    title: "Software Developer (Part-Time)",
+    company_name: "WIMTACH\nAPCI Project",
+    icon: wimtach,
     iconBg: "#9a919e",
-    date: "November 2021 - Current",
+    date: "May 2024 - August 2024",
     points: [
-      "Provide customer service, take orders, and process transactions in a fast-paced environment. ",
+      "Developed a cross-platform mobile app using React Native with backend functionalities in Python.",
+      "Leveraged AWS for user authentication, data storage, and deployment.",
+      "Integrated real-time data processing and analytics features.",
+      "Collaborated with environmental scientists to optimize tree placement algorithms.",
+      "Successfully released the MVP with all the features, including creating polygons in Google Maps and optimizing tree placement."
     ],
   },
   {
-    title: "Acountant",
-    company_name: "Xtayang Mechanical & Electrical Installation CO",
-    icon: xty,
-    iconBg: "#E6DEDD",
-    date: "July 2014 - February 2021",
+    title: "Software Developer (Part-Time)",
+    company_name: "WIMTACH\nAvondx Project",
+    icon: wimtach,
+    iconBg: "#9a919e",
+    date: "August 2024 - October 2024",
     points: [
-      "Responsible for recording all monthly bank transactions and financial expenditures of various departments into the financial system. Responsible for making financial statements.",
-      "Responsible for part of the company's administrative work. Responsible for part of the company's human resources.",
+      "Utilized Silero and Rnnoise models for noise reduction and voice activity detection on iOS devices.",
+      "Employed Pyannote’s Vosk model to transcribe audio to text subtitles.",
+      "Designed and implemented real-time speech processing pipelines.",
+      "Conducted performance testing to ensure transcription accuracy and speed.",
+      "Reduced Word Error Rate (WER) from 0.40 to less than 0.10 percent."
+    ],
+  },
+  {
+    title: "Software Engineering Technology - Artificial Intelligence Student",
+    company_name: "Centennial College",
+    icon: Centennial,
+    iconBg: "#E6DEDD",
+    date: "September 2021 - December 2024",
+    points: [
+      "Finished Advanced Diploma with high honours GPA and three terms co-op experience",
     ],
   },
 ];
+
+
+
 const projects = [
   {
-    name: "MealDiary",
+    name: "Rapid Diagnostic Test (RDT) Strip Image Analyzer Desktop Software Development",
     description:
-      "coding-based platform that manages users’ dietary needs and restrictions by helping them plan meals.",
+      "Implemented image processing workflows and enhanced band detection accuracy using Python and OpenCV.",
     tags: [
       {
-        name: "React",
+        name: "Python",
         color: "blue-text-gradient",
       },
       {
-        name: "Mongodb",
+        name: "OpenCV",
         color: "green-text-gradient",
       },
       {
-        name: "Bootstrap",
+        name: "Image Processing",
         color: "pink-text-gradient",
       },
     ],
-    image: mealDiary,
-    source_code_link: "https://github.com/Mia-Guoo/MealDiary.git",
+    image: rtds,  
+  },
+  { name: "Post-Stroke Rehabilitation System using Brain-Computer Interface Technology", 
+    description: "Conducted research and tuned CNN, RNN, and XGBoost models to classify EEG data, improving motor imagery classification accuracy.", 
+    tags: [ { name: "Python", color: "blue-text-gradient", }, 
+      { name: "Machine Learning", color: "green-text-gradient", },      
+    ], 
+    image: bci,},
+  {
+    name: "Health Prediction Mobile APP Development",
+    description:
+      "Developed and tested multiple machine learning models, integrating predictive models into a mobile app to aid in early diagnosis.",
+    tags: [
+      {
+        name: "Python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Machine Learning",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Cross-Validation",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: mobileHealth,  
+    
   },
   {
-    name: "Incident Management",
+    name: "Chronic Lower Back Pain Detection & Correction Mobile APP Development",
     description:
-      "coding application that provides a way to interact with users through user reports to determine when something goes wrong.",
+      "Enhanced keypoint detection models and developed a robust neural network for 2D landmark prediction.",
     tags: [
       {
-        name: "Angular",
+        name: "Python",
         color: "blue-text-gradient",
       },
       {
-        name: "Javascript",
+        name: "Machine Learning",
         color: "green-text-gradient",
       },
       {
-        name: "Bootstrap",
+        name: "Data Augmentation",
         color: "pink-text-gradient",
       },
     ],
-    image: incident,
-    source_code_link:
-      "https://github.com/Mia-Guoo/COMP229-codingGroupProject-Group16",
+    image: clbp,  
+    
   },
   {
-    name: "HR management",
+    name: "Tree Canopy Planning Mobile App (MVP)",
     description:
-      "An HR application to manage employees, jobs, and departments using Java and SQL database.                   ",
+      "Developed a cross-platform mobile app using React Native and Python, integrating real-time data processing and optimizing tree placement algorithms.",
     tags: [
       {
-        name: "Java",
+        name: "React Native",
         color: "blue-text-gradient",
       },
       {
-        name: "Spring boot",
+        name: "Python",
         color: "green-text-gradient",
       },
       {
-        name: "SQL",
+        name: "AWS",
         color: "pink-text-gradient",
       },
     ],
-    image: hr,
-    source_code_link: "https://github.com/Mia-Guoo/",
+    image: apci,  
+    
   },
+
+  {
+    name: "AI Transcription Technology Development",
+    description:
+      "Developed real-time speech processing pipelines, significantly reducing the Word Error Rate for speech-to-text transcription.",
+    tags: [
+      {
+        name: "Python",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "Silero",
+        color: "green-text-gradient",
+      },
+      {
+        name: "Speech Processing",
+        color: "pink-text-gradient",
+      },
+    ],
+    image: avondx,  
+    
+  },
+ ,
 ];
+
 
 export { services, technologies, experiences, projects };

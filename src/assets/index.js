@@ -30,8 +30,27 @@ import aws from "./aws.png";
 import azure from "./azure.png";
 import vuejs from "./vue.png";
 import server from "./server.png";
-
+import python from "./python.png";
+import java from "./java.png";
+import csharp from "./csharp.png";
+import phone from "./phone.png";
+import deeplearning from "./deeplearning.png";
+import apci from "./apci.png";
+import avondx from "./avondx.png";
+import clbp from "./clbp2.png";
+import mobileHealth from "./mobileHealth.png";
+import rtds from "./RTDS.png";
+import bci from "./bci.png";
+import Centennial from "./centen.png";
+import wimtach from "./WIMTACH.png";
+import healthcare from "./healthcare.png";
 export {
+  apci,
+  avondx,
+  mobileHealth,
+  clbp,
+  rtds,
+  python,
   htmlicon,
   creator,
   programming,
@@ -61,4 +80,12 @@ export {
   server,
   azure,
   vuejs,
+  java,
+  csharp,
+  phone,
+  deeplearning,
+  bci,
+  healthcare,
+  wimtach,
+  Centennial
 };
