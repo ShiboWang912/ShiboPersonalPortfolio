@@ -29,12 +29,16 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+       if (!form.name?.trim() || !form.email?.trim() || !form.message?.trim()) {
+     alert("Please fill out your name, email, and message.");
+     return;
+   }
     setLoading(true);
 
     emailjs
       .send(
-        "service_e6zkb4e",
-        "template_b0kb3n4",
+        "service_3hdamkq",
+        "template_jetl5zs",
         {
           from_name: form.name,
           to_name: "Shibo",
@@ -42,8 +46,24 @@ const Contact = () => {
           to_email: "shibowang7@gmail.com",
           message: form.message,
         },
-        "Y-FWD7gXg50mHMBq1"
+        "pZxV10qluTx618fQW"
       )
+      // +   emailjs
+    //  .send(
+    //    "service_e6zkb4e",
+    //    "template_b0kb3n4",
+    //    {
+    //      // ⚠️ These keys MUST match the variables defined in your EmailJS template
+    //      from_name: form.name,
+    //      from_email: form.email,
+    //      message: form.message,
+    //      // If your template defines reply_to or to_name, include them exactly:
+    //      // reply_to: form.email,
+    //      // to_name: "Shibo",
+    //    },
+    //    // v4 style: pass an options object so it works across versions reliably
+    //    { publicKey: "pZxV10qluTx618fQW" }
+    //  )
 
       .then(
         () => {
@@ -56,10 +76,22 @@ const Contact = () => {
             message: "",
           });
         },
-        (error) => {
+        async (error) => {
           setLoading(false);
-          console.error(error);
-
+          // console.error(error);
+                   // EmailJS gives a helpful text body for 400s—log it so we know *why*
+         try {
+           // SDK error can carry .text or .message; also try to unwrap response
+           console.error("EmailJS error object:", error);
+           if (error?.text) console.error("EmailJS error text:", error.text);
+           // Some environments: error is a Response-like object
+           if (error instanceof Response) {
+             const txt = await error.text();
+             console.error("EmailJS response text:", txt);
+           }
+         } catch (e2) {
+           console.error("Failed to read error text:", e2);
+         }
           alert("Ahh, something went wrong. Please try again.");
         }
       );
@@ -71,8 +103,8 @@ const Contact = () => {
     >
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-[#d4becc] p-8 rounded-2xl border-solid border-2 border-[#e6c7ed]"
-        //className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"
+        className="flex-[0.75] bg-[#dbdbdb] p-8 rounded-2xl border-solid border-2 border-[#927a7a]"
+        //className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card"rgb(146 122 122)
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 style={{ color: "black", fontWeight: "500", fontSize: "36px" }}>
@@ -92,7 +124,7 @@ const Contact = () => {
               value={form.name}
               onChange={handleChange}
               placeholder="What's your name?"
-              className="bg-[#7b6585] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-[#f0f8ff] py-4 px-6 placeholder:text-secondary text-black rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -103,7 +135,7 @@ const Contact = () => {
               value={form.email}
               onChange={handleChange}
               placeholder="What's your Email address?"
-              className="bg-[#7b6585] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-[#f0f8ff] py-4 px-6 placeholder:text-secondary text-black rounded-lg outline-none border-none font-medium"
             />
           </label>
           <label className="flex flex-col">
@@ -114,13 +146,13 @@ const Contact = () => {
               value={form.message}
               onChange={handleChange}
               placeholder="What do you want to say?"
-              className="bg-[#7b6585] py-4 px-6 placeholder:text-secondary text-white rounded-lg outline-none border-none font-medium"
+              className="bg-[#f0f8ff] py-4 px-6 placeholder:text-secondary text-black rounded-lg outline-none border-none font-medium"
             />
           </label>
 
           <button
             type="submit"
-            className="bg-[#7b6585] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
+            className="bg-[#222a2a] py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary"
           >
             {loading ? "Sending..." : "Send"}
           </button>
@@ -129,6 +161,7 @@ const Contact = () => {
 
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
+        style={{ filter: "grayscale(0.7)" }}      
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
         <EarthCanvas />

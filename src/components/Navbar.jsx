@@ -5,8 +5,8 @@ import { navLinks } from "../constants";
 import { menu, close } from "../assets";
 
 const Navbar = () => {
-  const [active, setActive] = useState(" ");
-  const [toggle, setToggle] = useState("false");
+  const [active, setActive] = useState("");
+  const [toggle, setToggle] = useState(false);
   return (
     <nav
       className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-[#2d2e31] `}
@@ -49,12 +49,10 @@ const Navbar = () => {
             src={toggle ? close : menu}
             alt="menu"
             className="w-[28px] h-[28px] object-contain cursor-pointer"
-            onClick={() => setToggle(!toggle)}
+            onClick={() => setToggle((t) => !t)}
           />
           <div
-            className={`${
-              !toggle ? "hidden" : "flex"
-            } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w[140px] z-10 rounded-xl`}
+            className={`${toggle ? "flex" : "hidden"} p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
           >
             <ul className="list-none flex justify-end items-start flex-col gap-4">
               {navLinks.map((link) => (

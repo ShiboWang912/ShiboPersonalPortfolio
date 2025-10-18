@@ -18,6 +18,9 @@
   padding-bottom: 100px;
   /* display: block; */
 }
+body {
+  padding-top: 5rem; /* equal to navbar height */
+}
 
 .black-gradient {
   background: #000000; /* fallback for old browsers */

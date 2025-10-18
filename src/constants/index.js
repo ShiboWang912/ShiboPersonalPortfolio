@@ -91,10 +91,6 @@ const services = [
     icon: server,
   },
   {
-    title: "Mobile App Development",
-    icon: phone,
-  },
-  {
     title: "Machine Learning & AI",
     icon: deeplearning,
   },

@@ -7,49 +7,51 @@ import resume from "../assets/ShiboWang-Resume.pdf";
 
 const Hero = () => {
   return (
-    <section className="relative w-full h-[600px] mx-auto">
-      {/* Brief Summary */}
+    <section className="relative w-full min-h-[600px] lg:min-h-[700px] pt-24 pb-12">
+
       <div
-        className={`${styles.paddingX} absolute inset-0 top-[180px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
+        className={`${styles.paddingX} max-w-7xl mx-auto flex flex-col-reverse lg:flex-row items-center justify-between gap-10`}
       >
-        <div className="flex flex-col justify-center items-center mt-5">
-          <div className="w-5 h-5 rounded-full bg-[#2d2e31]" />
-          <div className="w-1 sm:h-80 h-40 bg-gradient-to-tr from-[#d9d2d6] to-[#010510] opacity-50" />
-        </div>
-        <div className="w-7/12 z-10">
-          <h1 className={`${styles.heroHeadText} `}>
-            <span className="text-[#000000]">Hello!  I'm Shibo Wang</span>
-            <br />
+        {/* ====== Left Column: Text ====== */}
+        <div className="flex-1 text-center lg:text-left">
+          <h1 className={`${styles.heroHeadText}`}>
+            <span className="text-[#000000]">Hello! I'm Shibo Wang</span>
           </h1>
-          <p className={`${styles.heroSubText} mt-2 `}>
-            a Full-Stack Developer & AI Engineer passionate about building cloud-native, data-driven systems.
+
+          <p className={`${styles.heroSubText} mt-4 text-[#000000]`}>
+            a Full-Stack Developer & AI Engineer passionate about building
+            cloud-native, data-driven systems.
           </p>
-          <br />
-          <p className="text-xl" style={{ color: "black" }}>
-            I develop scalable web platforms, AI chatbots, and automation tools across publishing, healthcare, and manufacturing. From backend APIs and databases to responsive React front-ends and AWS deployments, I focus on clean, maintainable solutions that deliver real impact.</p>      
-          <br />
-          <Link to="https://www.linkedin.com/in/shibo-wang-572298256/">
-            <button type="button" className="btn btn-info">
-              <img src="linkedin.png" className="h-[35px]" />
-            </button>
-          </Link>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          <Link to="https://github.com/ShiboWang912">
-            <button type="button" className="btn btn-info">
-              <img src="github.png" className="h-[35px]" />
-            </button>
-          </Link>
-          &nbsp;&nbsp;&nbsp;&nbsp;
-          {/* <a href={resume} target="_blank" rel="noopener noreferrer" className="underline">
-            <button type="button" className="btn btn-info">
-              <img src="resume.png" className="h-[35px]" />
-            </button>
-          </a> */}
+
+          <p className="mt-4 text-[16px] sm:text-[18px] leading-relaxed text-[#000000]">
+            I develop scalable web platforms, AI chatbots, and automation tools
+            across publishing, healthcare, and manufacturing. From backend APIs
+            and databases to responsive React front-ends and AWS deployments, I
+            focus on clean, maintainable solutions that deliver real impact.
+          </p>
+
+          <div className="mt-6 flex justify-center lg:justify-start gap-6">
+            <Link to="https://www.linkedin.com/in/shibo-wang-572298256/">
+              <img
+                src="linkedin.png"
+                alt="LinkedIn"
+                className="h-[35px] hover:scale-110 transition-transform"
+              />
+            </Link>
+            <Link to="https://github.com/ShiboWang912">
+              <img
+                src="github.png"
+                alt="GitHub"
+                className="h-[35px] hover:scale-110 transition-transform"
+              />
+            </Link>
+          </div>
         </div>
-        <div>
-          <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+        {/* ====== Right Column: Photo ====== */}
+        <div className="flex justify-center lg:justify-end flex-1 mt-6 lg:mt-0">
+          <ShiboPhoto />
         </div>
-        <ShiboPhoto />
       </div>
     </section>
   );

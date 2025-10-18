@@ -1,20 +1,14 @@
-//Mia photo
-import React, { Suspense, useEffect, useState } from "react";
-import { styles } from "../styles";
+import React from "react";
 
 const ShiboPhoto = () => {
-  //   const isMobile = window.innerWidth < 500; // Check if the screen size is smaller than 500px
-  const isMobile = window.matchMedia("(max-width: 500px)");
-
   return (
-    <div>
-      <img
-        src={isMobile ? "sb.jpg" : "sb.jpg"}
-        alt="Image"
-        // style={{ height: 350 }}
-        style={{ width: 350, borderRadius: 80 }}
-      />
-    </div>
+    <img
+      src="sb.jpg"
+      alt="Shibo Wang"
+      className="rounded-[40px] w-48 sm:w-64 md:w-80 lg:w-96 max-w-full h-auto shadow-md"
+    />
   );
 };
+
+
 export default ShiboPhoto;

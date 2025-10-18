@@ -10,33 +10,25 @@ import transcript from "../assets/ShiboWang_Transcript.pdf";
 import diploma from "../assets/parchment.pdf"; 
 
 const ServiceCard = ({ index, title, icon }) => (
-  <Tilt className="xs:w-[180px] h-[180px] w-full">
+  // fixed width at all times; do NOT use w-full here
+  <Tilt className="flex-none w-[180px] sm:w-[200px] lg:w-[220px] h-auto">
     <motion.div
       variants={fadeIn("right", "spring", index * 0.5, 0.75)}
-      className="w-full p-[1px] rounded-[20px]"
+      className="p-[1px] rounded-[20px]" // no w-full needed
     >
       <div
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
         style={{ border: '2px solid #75bce3' }}
-        className="bg-[#5f6063] rounded-[20px] py-5 px-5 min-h-[240px] flex justify-evenly items-center flex-col"
+        className="bg-[#5f6063] rounded-[20px] py-5 px-5
+                   h-[220px] sm:h-[240px]
+                   flex flex-col justify-evenly items-center"
       >
-        <img
-          src={icon}
-          alt="web-development"
-          className="w-16 h-16 object-contain"
-        />
-
-        <h3 className="text-[#ffffff] text-[20px] font-bold text-center">
-          {title}
-        </h3>
+        <img src={icon} alt={title} className="w-16 h-16 object-contain" />
+        <h3 className="text-white text-[20px] font-bold text-center">{title}</h3>
       </div>
     </motion.div>
   </Tilt>
 );
+
 
 const About = () => {
   return (
@@ -50,40 +42,28 @@ const About = () => {
         </h3>
       </motion.div>
 
-      <motion.p
+      <motion.div
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-[#000000] text-[20px] max-w-3xl leading-[30px]"
+        className="mt-4 text-[#000000] text-[16px] sm:text-[18px] leading-relaxed"
       >
-        <ul>
-          <li className="list-disc">
-            Programming & Frameworks: JavaScript (React, Node.js, Next.js), Python (Flask, Chalice, OpenCV), Java, C#, React Native, HTML, CSS, .NET, Spring Boot
-          </li>
-          <li className="list-disc">
-            Cloud & DevOps: AWS (Lambda, API Gateway, DynamoDB, S3, SES, Chalice), Docker, CI/CD, Vercel, Azure DevOps
-          </li>
-          <li className="list-disc">
-            Databases: DynamoDB, MongoDB Atlas, MySQL, Firebase, PostgreSQL
-          </li>
-          <li className="list-disc">Machine Learning & AI: OpenAI API, PyTorch, TensorFlow, Scikit-learn, Computer Vision, Data Augmentation</li>
-          <li className="list-disc">Tools & Platforms: Git/GitHub, Jira, Confluence, Power BI, Figma</li>
-          <li className="list-disc">
-            Soft Skills: Detail-oriented and adaptable developer with strong analytical thinking, fast learning ability, and proven collaboration across research and production environments.
-          </li>
+        <ul className="list-disc pl-5 space-y-3 max-w-3xl">
+          <li>Programming & Frameworks: JavaScript (React, Node.js, Next.js), Python (Flask, Chalice, OpenCV), Java, C#, React Native, HTML, CSS, .NET, Spring Boot</li>
+          <li>Cloud & DevOps: AWS (Lambda, API Gateway, DynamoDB, S3, SES, Chalice), Docker, CI/CD, Vercel, Azure DevOps</li>
+          <li>Databases: DynamoDB, MongoDB Atlas, MySQL, Firebase, PostgreSQL</li>
+          <li>Machine Learning & AI: OpenAI API, PyTorch, TensorFlow, Scikit-learn, Computer Vision, Data Augmentation</li>
+          <li>Tools & Platforms: Git/GitHub, Jira, Confluence, Power BI, Figma</li>
+          <li>Soft Skills: Detail-oriented, adaptable, strong analytical thinker and collaborator.</li>
         </ul>
-      </motion.p>
+      </motion.div>
 
-      <div className="mt-20 flex flex-wrap gap-2">
+      <div className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10">
+
         {services.map((service, index) => (
           <ServiceCard key={service.title} index={index} {...service} />
         ))}
       </div>
       <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
-      <br />
+   
       <motion.div variants={textVariant()}>
         <br />
         <br />
@@ -93,33 +73,17 @@ const About = () => {
         </h3>
       </motion.div>
 
-      <motion.p
+      <motion.div
         variants={fadeIn("", "", 0.1, 1)}
-        className="mt-4 text-[#000000] text-[20px] max-w-3xl leading-[30px]"
+        className="mt-6 text-[#000000] text-[16px] sm:text-[18px] leading-relaxed"
       >
-        <ul>
-          <li className="list-disc">
-            Software Engineering Technology - Artificial Intelligence Advanced Diploma
-          </li>
-          <li className="list-disc">
-            Sept 2021 - Dec 2024
-          </li>
-          <li className="list-disc">
-            Scarborough, ON
-          </li>
-          <li className="list-disc">GPA 4.4/4.5 High Honours</li>
-          <li className="list-disc">
-            <a href={transcript} target="_blank" rel="noopener noreferrer" className="underline">
-              Transcript
-            </a>
-          </li>
-          <li className="list-disc">
-            <a href={diploma} target="_blank" rel="noopener noreferrer" className="underline">
-            Diploma Parchment
-            </a>
-          </li>
+        <ul className="list-disc pl-5 space-y-2 max-w-3xl">
+          <li>Software Engineering Technology – Artificial Intelligence (Advanced Diploma)</li>
+          <li>Sept 2021 – Dec 2024 · Scarborough, ON · GPA 4.4/4.5 (High Honours)</li>
+          <li><a href={transcript} target="_blank" rel="noopener noreferrer" className="underline">Transcript</a></li>
+          <li><a href={diploma} target="_blank" rel="noopener noreferrer" className="underline">Diploma Parchment</a></li>
         </ul>
-      </motion.p>
+      </motion.div>
 
     </>
   );

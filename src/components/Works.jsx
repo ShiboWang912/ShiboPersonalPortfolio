@@ -1,15 +1,14 @@
 import React from "react";
-import Tilt from 'react-parallax-tilt';
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
 import { projects } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { createPortal } from "react-dom";
 
-
+/* ===================== Lightbox (unchanged) ===================== */
 function Lightbox({
   images,
   activeIdx,
@@ -19,18 +18,25 @@ function Lightbox({
   setFitToScreen,
   name,
 }) {
-  // Close on ESC + arrow nav
   React.useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") onClose();
       if (e.key === "ArrowRight") setActiveIdx((i) => (i + 1) % images.length);
-      if (e.key === "ArrowLeft") setActiveIdx((i) => (i - 1 + images.length) % images.length);
+      if (e.key === "ArrowLeft")
+        setActiveIdx((i) => (i - 1 + images.length) % images.length);
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [images.length, onClose, setActiveIdx]);
 
-  // Render to body so transforms/z-index don’t affect it
+  React.useEffect(() => {
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = prev;
+    };
+  }, []);
+
   return createPortal(
     <div
       className="fixed inset-0 z-[9999] bg-black/90"
@@ -39,7 +45,6 @@ function Lightbox({
       role="dialog"
       aria-label={`${name} screenshots`}
     >
-      {/* full viewport, centered; scroll if image larger than screen */}
       <div
         className="w-screen h-screen p-4 flex items-center justify-center overflow-auto"
         onClick={(e) => e.stopPropagation()}
@@ -55,7 +60,6 @@ function Lightbox({
           onDoubleClick={() => setFitToScreen((v) => !v)}
         />
 
-        {/* Controls */}
         <button
           onClick={onClose}
           className="absolute top-4 right-4 px-3 py-1 rounded bg-black/70 text-white text-sm hover:bg-black/80"
@@ -101,6 +105,7 @@ function Lightbox({
   );
 }
 
+/* ===================== ProjectCard (kept structure) ===================== */
 const ProjectCard = ({
   index,
   name,
@@ -118,24 +123,25 @@ const ProjectCard = ({
 
   const mainImage = images?.[activeIdx] || images?.[0];
 
-// scroll-lock when lightbox open
-  React.useEffect(() => {
-    if (!lightboxOpen) return;
-    const prev = document.body.style.overflow;
-    document.body.style.overflow = "hidden";
-    return () => { document.body.style.overflow = prev; };
-  }, [lightboxOpen]);
-
   return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt options={{ max: 45, scale: 1, speed: 450 }} className="bg-[#403445] p-5 rounded-2xl sm:w-[360px] w-full">
-        {/* Main image (no cropping) */}
+    // Disable "hidden first" animation so cards render immediately on tiny screens
+    <motion.div
+      variants={fadeIn("up", "spring", index * 0.15, 0.6)}
+      initial={false}
+      whileInView="show"
+      viewport={{ once: true, amount: 0.05 }}
+    >
+      <Tilt
+        options={{ max: 45, scale: 1, speed: 450 }}
+        className="bg-[#403445] p-4 rounded-2xl w-full min-w-0 overflow-hidden shadow-md"
+      >
+        {/* 16:9 media box prevents overflow */}
         <div
           className="relative w-full rounded-2xl bg-black/20 aspect-[16/9] flex items-center justify-center overflow-hidden cursor-zoom-in"
           title="Click to view full size"
           onClick={() => {
             if (images?.length) {
-              setFitToScreen(false);   // start in Actual size
+              setFitToScreen(true);
               setLightboxOpen(true);
             }
           }}
@@ -145,6 +151,7 @@ const ProjectCard = ({
               src={mainImage}
               alt={`${name} screenshot ${activeIdx + 1}`}
               className="max-h-full max-w-full object-contain w-full h-full"
+              loading="lazy"
             />
           ) : (
             <div className="w-full h-full rounded-2xl flex items-center justify-center text-white/70">
@@ -158,31 +165,45 @@ const ProjectCard = ({
           )}
         </div>
 
-        {/* Thumbnails (no cropping) */}
+        {/* Thumbnails */}
         {images?.length > 1 && (
           <div className="mt-3 flex gap-2 overflow-x-auto">
             {images.map((src, i) => (
               <button
-                key={src + i}
-                onClick={(e) => { e.stopPropagation(); setActiveIdx(i); }}
-                className={`h-16 w-24 rounded-lg overflow-hidden border ${i === activeIdx ? "border-white" : "border-white/30"} flex-shrink-0 bg-black/20 flex items-center justify-center`}
+                key={`${name}-thumb-${i}`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setActiveIdx(i);
+                }}
+                className={`h-16 w-24 rounded-lg overflow-hidden border ${
+                  i === activeIdx ? "border-white" : "border-white/30"
+                } flex-shrink-0 bg-black/20 flex items-center justify-center`}
                 title={`Screenshot ${i + 1}`}
               >
-                <img src={src} alt={`thumb-${i + 1}`} className="object-contain w-full h-full" />
+                <img
+                  src={src}
+                  alt={`thumb-${i + 1}`}
+                  className="object-contain w-full h-full"
+                  loading="lazy"
+                />
               </button>
             ))}
           </div>
         )}
 
         {/* Text */}
-        <div className="mt-5">
-          <h3 className="text-white font-bold text-[20px]">{name}</h3>
-          <p className="mt-2 text-secondary text-[14px]">{description}</p>
+        <div className="mt-5 min-w-0">
+          <h3 className="text-white font-bold text-[18px] sm:text-[20px] truncate">
+            {name}
+          </h3>
+          <p className="mt-2 text-secondary text-[14px] leading-relaxed break-words">
+            {description}
+          </p>
         </div>
 
         {/* Tags */}
         <div className="mt-3 flex flex-wrap gap-2">
-          {tags.map((tag) => (
+          {tags?.map((tag) => (
             <p key={`${name}-${tag.name}`} className={`text-[13px] ${tag.color}`}>
               #{tag.name}
             </p>
@@ -232,37 +253,38 @@ const ProjectCard = ({
           </div>
         )}
 
-        {/* ===== Lightbox via Portal (FULL WINDOW CENTERED) ===== */}
-                {lightboxOpen && images?.length > 0 && (
-                  <Lightbox
-                    images={images}
-                    activeIdx={activeIdx}
-                    setActiveIdx={setActiveIdx}
-                    onClose={() => setLightboxOpen(false)}
-                    fitToScreen={fitToScreen}
-                    setFitToScreen={setFitToScreen}
-                    name={name}
-                  />
-                )}
-              </Tilt>
-            </motion.div>
-          );
-        };
+        {/* Lightbox */}
+        {lightboxOpen && images?.length > 0 && (
+          <Lightbox
+            images={images}
+            activeIdx={activeIdx}
+            setActiveIdx={setActiveIdx}
+            onClose={() => setLightboxOpen(false)}
+            fitToScreen={fitToScreen}
+            setFitToScreen={setFitToScreen}
+            name={name}
+          />
+        )}
+      </Tilt>
+    </motion.div>
+  );
+};
 
-
+/* ===================== Works ===================== */
 const Works = () => {
   return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h3 style={{ color: "black", fontWeight: "500", fontSize: "36px" }}>
+    <section id="work" className="scroll-mt-28 md:scroll-mt-32">
+      <motion.div variants={textVariant()} initial={false}>
+        <p className={styles.sectionSubText}>My work</p>
+        <h3 style={{ color: "black", fontWeight: 500, fontSize: "36px" }}>
           Projects.
         </h3>
       </motion.div>
 
-      <div className="w-full flex">
+      <div className="w-full">
         <motion.p
           variants={fadeIn("", "", 0.1, 1)}
+          initial={false}
           className="mt-3 text-[#000] text-[17px] max-w-3xl leading-[30px]"
         >
           The following projects showcase my skills and experience through
@@ -270,12 +292,17 @@ const Works = () => {
         </motion.p>
       </div>
 
-      <div className="mt-20 flex flex-wrap gap-7">
+      {/* Responsive grid:
+         - 1 column by default
+         - 2 columns from 360px wide (phones like iPhone SE/mini)
+         - 3 columns from md (≥768px), tweak as you like
+      */}
+      <div className="mt-10 grid grid-cols-1 min-[360px]:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
         {projects.map((project, index) => (
           <ProjectCard key={`project-${index}`} index={index} {...project} />
         ))}
       </div>
-    </>
+    </section>
   );
 };
 
