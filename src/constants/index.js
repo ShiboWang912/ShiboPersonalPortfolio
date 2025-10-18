@@ -38,7 +38,24 @@ import {
   bci,
   Centennial,
   wimtach,
-  healthcare
+  healthcare,
+  chatbot1,
+  chatbot_demo,
+  protal_demo,
+  chatbot2,
+  chatbot3,
+  protal1,
+  protal2,
+  protal3,
+  inss1,
+  inss2,
+  inss3,
+  gcit1,
+  gcit2,
+  gcit3,
+  EpicOne,
+  insspress,
+  conference,
 } from "../assets";
 
 export const navLinks = [
@@ -58,27 +75,27 @@ export const navLinks = [
 
 const services = [
   {
-    title: "JavaScript & Vue.js & React & Angular",
+    title: "Programming & Frameworks",
     icon: programming,
   },
+  // {
+  //   title: "Programming & Frameworks",
+  //   icon: htmlicon,
+  // },
   {
-    title: "HTML & CSS",
-    icon: htmlicon,
-  },
-  {
-    title: "Python & Java & C#",
+    title: "GenAI",
     icon: coding,
   },
   {
-    title: "Aws & Azure",
+    title: "Cloud & DevOps",
     icon: server,
   },
   {
-    title: "Mobile Development",
+    title: "Mobile App Development",
     icon: phone,
   },
   {
-    title: "Machine Learning",
+    title: "Machine Learning & AI",
     icon: deeplearning,
   },
 ];
@@ -131,94 +148,78 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Software Engineering Research Assistant (Co-op)",
-    company_name: "Healthcare Systems R&A Inc.\nRDTS Project",
-    icon: healthcare,
-    iconBg: "#FFFFFF",
-    date: "May 2023 - August 2023",
+    title: "Freelance CTO",
+    company_name: "INSS Press",
+    icon: insspress, 
+    iconBg: "#1f2937",
+    date: "Aug 2025 – Present | Toronto, ON",
     points: [
-      "Implemented plot visualization and data representation using Python and OpenCV.",
-      "Developed baseline functionality for noise reduction and increased pixel intensity for better image clarity.",
-      "Automated image processing workflows to enhance efficiency.",
-      "Conducted user testing to refine application features based on feedback.",
-      "Enhanced accuracy and reliability of band detection and quantification by 50% using OpenCV."
+      "Led Dockerized deployment of Janeway/Django publishing system.",
+      "Integrated secure payment, peer-review, and CMS workflows.",
+      "Automated editorial processes for multiple academic journals.",
+      "Deployed production infrastructure with CI/CD pipelines.",
     ],
   },
   {
-    title: "Software Engineering Research Assistant (Co-op)",
-    company_name: "Healthcare Systems R&A Inc.\nBCI Project",
-    icon: healthcare,
-    iconBg: "#FFFFFF",
-    date: "August 2023 - September 2023",
+    title: "Web Engineer (Conference Project)",
+    company_name: "GCITSD 2026",
+    icon: conference, 
+    iconBg: "#1f2937",
+    date: "Sept 2025 – Present | Remote",
     points: [
-      "Conducted research and tuned CNN, RNN, and XGBoost models to classify EEG data into motor imageries, achieving significant accuracy improvements.",
-      "Analyzed limitations in existing models, particularly in capturing time series aspects of EEG signals.",
-      "Experimented with various datasets (8, 16, and 64 electrodes) to enhance model performance, utilizing Python and machine learning libraries for data preprocessing and organization.",
+      "Developed bilingual conference site using React/Next.js and PayPal API.",
+      "Implemented registration tiers, email automation, and SendGrid notifications.",
+      "Optimized deployment for African networks using CDN distribution.",
     ],
   },
   {
-    title: "Software Engineering Research Assistant (Co-op)",
-    company_name: "Healthcare Systems R&A Inc.\nMobileHealth Project",
-    icon: healthcare,
-    iconBg: "#FFFFFF",
-    date: "September 2023 - December 2023",
+    title: "Freelance Software Developer",
+    company_name: "EpicOne",
+    icon: EpicOne, 
+    iconBg: "#1f2937",
+    date: "Mar 2025 – Present | Mississauga, ON",
     points: [
-      "Developed and tested multiple machine learning models, integrating predictive models into a mobile app to aid in early diagnosis.",
-      "Conducted data exploration and visualization using the DUKECATHR dataset, highlighting imbalances for better understanding.",
-      "Collaborated with cross-functional teams to integrate predictive models into the mobile app.",
-      "Improved model performance by balancing accuracy, precision, recall, and F1 values, enhancing model reliability by 30%."
+      "Designed AWS serverless architecture with Chalice, Lambda, and DynamoDB.",
+      "Built React dashboard for 1500+ clients with CSV export and SES notifications.",
+      "Developed OpenAI-powered chatbot for scheduling and client support.",
+      "Defined DynamoDB schemas and admin workflows for scalable operations.",
     ],
   },
   {
-    title: "Software Engineering Research Assistant (Co-op)",
-    company_name: "Healthcare Systems R&A Inc.\nCLBP Project",
-    icon: healthcare,
-    iconBg: "#FFFFFF",
-    date: "May 2024 - September 2024",
-    points: [
-      "Increased 25-Landmark Model accuracy using customized data augmentation methods.",
-      "Implemented custom methods to enhance masked image heatmap keypoint detection models.",
-      "Researched and applied advanced machine learning techniques to improve detection accuracy.",
-      "Coordinated with healthcare professionals to refine detection algorithms and user interfaces.",
-      "Improved model accuracy from 73% to 96%, enhancing keypoint prediction reliability and precision."
-    ],
-  },
-  {
-    title: "Software Developer (Part-Time)",
-    company_name: "WIMTACH\nAPCI Project",
-    icon: wimtach,
+    title: "Software Developer",
+    company_name: "WIMTACH",
+    icon: wimtach, 
     iconBg: "#9a919e",
-    date: "May 2024 - August 2024",
+    date: "May 2024 – Oct 2024 | Scarborough, ON",
     points: [
-      "Developed a cross-platform mobile app using React Native with backend functionalities in Python.",
-      "Leveraged AWS for user authentication, data storage, and deployment.",
-      "Integrated real-time data processing and analytics features.",
-      "Collaborated with environmental scientists to optimize tree placement algorithms.",
-      "Successfully released the MVP with all the features, including creating polygons in Google Maps and optimizing tree placement."
+      "Built tree canopy planning mobile app using React Native and AWS backend.",
+      "Implemented spatial algorithms (Python) for land-use optimization.",
+      "Integrated AWS Amplify authentication and user management.",
+      "Led UI/UX testing, improving prototype adoption by 40%.",
     ],
   },
   {
-    title: "Software Developer (Part-Time)",
-    company_name: "WIMTACH\nAvondx Project",
-    icon: wimtach,
-    iconBg: "#9a919e",
-    date: "August 2024 - October 2024",
+    title: "Software Engineering Research Assistant (Co-op)",
+    company_name: "Healthcare Systems R&A Inc.",
+    icon: healthcare, // replace with your icon path
+    iconBg: "#ffffff",
+    date: "May 2023 – Sept 2024 | Mississauga, ON",
     points: [
-      "Utilized Silero and Rnnoise models for noise reduction and voice activity detection on iOS devices.",
-      "Employed Pyannote’s Vosk model to transcribe audio to text subtitles.",
-      "Designed and implemented real-time speech processing pipelines.",
-      "Conducted performance testing to ensure transcription accuracy and speed.",
-      "Reduced Word Error Rate (WER) from 0.40 to less than 0.10 percent."
+      "Developed ML pipelines in Python/OpenCV for medical image analysis.",
+      "Trained predictive models using SMOTE, PCA, and Bayesian optimization.",
+      "Integrated ML outputs into mobile app for real-time inference.",
+      "Collaborated with clinicians to define validation and accuracy metrics.",
     ],
   },
   {
-    title: "Software Engineering Technology - Artificial Intelligence Student",
+    title: "Education",
     company_name: "Centennial College",
-    icon: Centennial,
-    iconBg: "#E6DEDD",
-    date: "September 2021 - December 2024",
+    icon: Centennial, 
+    iconBg: "#1f2937",
+    date: "Sept 2021 – Dec 2024 | Scarborough, ON",
     points: [
-      "Finished Advanced Diploma with high honours GPA and three terms co-op experience",
+      "Advanced Diploma – Software Engineering Technology (AI), High Honours.",
+      "Graduated with GPA 4.4 / 4.5, focusing on AI, cloud, and full-stack development.",
     ],
   },
 ];
@@ -226,6 +227,122 @@ const experiences = [
 
 
 const projects = [
+  // 1) Chatbot
+  {
+    name: "EpicOne-SportsRehabTO AI Chatbot",
+    description:
+      "Clinic chatbot for appointment booking and FAQs. Uses OpenAI + AWS (API Gateway, Lambda, DynamoDB) with secure flows and multi-clinic scaling.",
+    tags: [
+      { name: "React", color: "blue-text-gradient" },
+      { name: "AWS", color: "green-text-gradient" },
+      { name: "OpenAI", color: "pink-text-gradient" },
+    ],
+    images: [
+      chatbot1,
+      chatbot2,
+      chatbot3,
+    ],
+    video: chatbot_demo,   // place file in public/demos/
+    live: "",                           // add if public
+    repo: "",                           // add if public
+  },
+
+  // 2) SATURN Scale Report Portal
+  {
+    name: "EpicOne-SATURN Scale Report Portal",
+    description:
+      "Serverless portal for 1500+ clients to access calibration reports. React front end, AWS Chalice API, DynamoDB, SES notifications, role-based access.",
+    tags: [
+      { name: "React", color: "blue-text-gradient" },
+      { name: "AWS-Chalice", color: "green-text-gradient" },
+      { name: "DynamoDB", color: "pink-text-gradient" },
+    ],
+    images: [
+      protal1,
+      protal2,
+      protal3,
+    ],
+    video: protal_demo,
+    live: "",
+    repo: "https://github.com/ShiboWang912/saturn-scale-portal",
+  },
+
+  // 3) INSS Press (Production)
+  {
+    name: "INSS Press (Production)",
+    description:
+      "Django/Janeway-based publisher platform with custom theme, editorial workflows, and secure galleys. Production site actively used by journals.",
+    tags: [
+      { name: "Django/Janeway", color: "blue-text-gradient" },
+      { name: "Docker", color: "green-text-gradient" },
+      { name: "DevOps", color: "pink-text-gradient" },
+    ],
+    images: [
+      inss1,
+      inss2,
+      inss3,
+    ],
+    video: "",                                    // optional
+    live: "https://www.insspress.org",
+    repo: "",
+  },
+
+  // 4) GCITSD 2026 Conference (Production)
+  {
+    name: "GCITSD 2026 Conference Site (Production)",
+    description:
+      "Conference site with PayPal payments, registration tiers, bilingual content, and SendGrid notifications. Optimized for Africa access.",
+    tags: [
+      { name: "React/Next", color: "blue-text-gradient" },
+      { name: "PayPal", color: "green-text-gradient" },
+      { name: "SendGrid", color: "pink-text-gradient" },
+    ],
+    images: [
+      gcit1,
+      gcit2,
+      gcit3,
+    ],
+    video: "",
+    live: "https://www.gcitsd.org",
+    repo: "",
+  },
+
+  // 5) Tree Canopy Planning Mobile App (MVP)
+  {
+    name: "Tree Canopy Planning Mobile App (MVP)",
+    description:
+      "Cross-platform app (React Native + Python backend) with Google Maps polygon tools and tree placement optimization.",
+    tags: [
+      { name: "React Native", color: "blue-text-gradient" },
+      { name: "Python", color: "green-text-gradient" },
+      { name: "AWS", color: "pink-text-gradient" },
+    ],
+    images: [
+      apci,
+      
+    ],
+    video: "",
+    live: "",
+    repo: "",
+  },
+
+  // 6) Chronic Lower Back Pain ML Project
+  {
+    name: "Chronic Lower Back Pain ML Project",
+    description:
+      "Enhanced keypoint detection with custom augmentation; improved masked heatmap keypoint model accuracy (25-landmark) dramatically.",
+    tags: [
+      { name: "Python", color: "blue-text-gradient" },
+      { name: "Computer Vision", color: "green-text-gradient" },
+      { name: "Data Augmentation", color: "pink-text-gradient" },
+    ],
+    images: [
+      clbp
+    ],
+    video: "",
+    live: "",
+    repo: "",
+  },
   {
     name: "Rapid Diagnostic Test (RDT) Strip Image Analyzer Desktop Software Development",
     description:
@@ -244,14 +361,14 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: rtds,  
+    images: [rtds],  
   },
   { name: "Post-Stroke Rehabilitation System using Brain-Computer Interface Technology", 
     description: "Conducted research and tuned CNN, RNN, and XGBoost models to classify EEG data, improving motor imagery classification accuracy.", 
     tags: [ { name: "Python", color: "blue-text-gradient", }, 
       { name: "Machine Learning", color: "green-text-gradient", },      
     ], 
-    image: bci,},
+    images: [bci],},
   {
     name: "Health Prediction Mobile APP Development",
     description:
@@ -270,52 +387,9 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: mobileHealth,  
+    images: [mobileHealth],  
     
   },
-  {
-    name: "Chronic Lower Back Pain Detection & Correction Mobile APP Development",
-    description:
-      "Enhanced keypoint detection models and developed a robust neural network for 2D landmark prediction.",
-    tags: [
-      {
-        name: "Python",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Machine Learning",
-        color: "green-text-gradient",
-      },
-      {
-        name: "Data Augmentation",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: clbp,  
-    
-  },
-  {
-    name: "Tree Canopy Planning Mobile App (MVP)",
-    description:
-      "Developed a cross-platform mobile app using React Native and Python, integrating real-time data processing and optimizing tree placement algorithms.",
-    tags: [
-      {
-        name: "React Native",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "Python",
-        color: "green-text-gradient",
-      },
-      {
-        name: "AWS",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: apci,  
-    
-  },
-
   {
     name: "AI Transcription Technology Development",
     description:
@@ -334,7 +408,7 @@ const projects = [
         color: "pink-text-gradient",
       },
     ],
-    image: avondx,  
+    images: [avondx],  
     
   },
  ,

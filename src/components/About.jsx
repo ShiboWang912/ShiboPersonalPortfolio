@@ -56,18 +56,18 @@ const About = () => {
       >
         <ul>
           <li className="list-disc">
-            Programming & Frameworks: C#, Java, JavaScript, Python, HTML, CSS, Angular, React, React-Native, Node.js, Vue.js, .NET, Spring Boot, UI/UX
+            Programming & Frameworks: JavaScript (React, Node.js, Next.js), Python (Flask, Chalice, OpenCV), Java, C#, React Native, HTML, CSS, .NET, Spring Boot
           </li>
           <li className="list-disc">
-            Big Data Technologies: Apache Spark, Hadoop
+            Cloud & DevOps: AWS (Lambda, API Gateway, DynamoDB, S3, SES, Chalice), Docker, CI/CD, Vercel, Azure DevOps
           </li>
           <li className="list-disc">
-            Databases: Oracle, MY-SQL, MongoDB Atlas, DynamoDB, Firebase
+            Databases: DynamoDB, MongoDB Atlas, MySQL, Firebase, PostgreSQL
           </li>
-          <li className="list-disc">Tools: Jira, Atlassian, Confluence, Git/GitHub, MS Project, Visio, PowerBI</li>
-          <li className="list-disc">Cloud Platforms: AWS, Azure</li>
+          <li className="list-disc">Machine Learning & AI: OpenAI API, PyTorch, TensorFlow, Scikit-learn, Computer Vision, Data Augmentation</li>
+          <li className="list-disc">Tools & Platforms: Git/GitHub, Jira, Confluence, Power BI, Figma</li>
           <li className="list-disc">
-            Soft Skills: Proficient in software development with strong problem-solving skills and the ability to learn quickly. Detail-oriented team player adept at following instructions and collaborating effectively.
+            Soft Skills: Detail-oriented and adaptable developer with strong analytical thinking, fast learning ability, and proven collaboration across research and production environments.
           </li>
         </ul>
       </motion.p>

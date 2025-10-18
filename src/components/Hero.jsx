@@ -18,16 +18,15 @@ const Hero = () => {
         </div>
         <div className="w-7/12 z-10">
           <h1 className={`${styles.heroHeadText} `}>
-            <span className="text-[#000000]">Hello! </span>
-            <br /> I'm Shibo Wang
+            <span className="text-[#000000]">Hello!  I'm Shibo Wang</span>
+            <br />
           </h1>
           <p className={`${styles.heroSubText} mt-2 `}>
-            Software Developer & Machine Learning Engineer
+            a Full-Stack Developer & AI Engineer passionate about building cloud-native, data-driven systems.
           </p>
           <br />
           <p className="text-xl" style={{ color: "black" }}>
-            Software Engineer skilled in frontend/backend development, cloud platforms, testing, databases, and machine learning. Experienced in building full-stack frameworks and data-driven solutions.
-          </p>
+            I develop scalable web platforms, AI chatbots, and automation tools across publishing, healthcare, and manufacturing. From backend APIs and databases to responsive React front-ends and AWS deployments, I focus on clean, maintainable solutions that deliver real impact.</p>      
           <br />
           <Link to="https://www.linkedin.com/in/shibo-wang-572298256/">
             <button type="button" className="btn btn-info">
@@ -41,11 +40,11 @@ const Hero = () => {
             </button>
           </Link>
           &nbsp;&nbsp;&nbsp;&nbsp;
-          <a href={resume} target="_blank" rel="noopener noreferrer" className="underline">
+          {/* <a href={resume} target="_blank" rel="noopener noreferrer" className="underline">
             <button type="button" className="btn btn-info">
               <img src="resume.png" className="h-[35px]" />
             </button>
-          </a>
+          </a> */}
         </div>
         <div>
           <p>&nbsp;&nbsp;&nbsp;&nbsp;</p>

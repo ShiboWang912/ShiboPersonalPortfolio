@@ -44,6 +44,23 @@ import bci from "./bci.png";
 import Centennial from "./centen.png";
 import wimtach from "./WIMTACH.png";
 import healthcare from "./healthcare.png";
+import chatbot1 from "./projects/chatbot_mainPage.png";
+import chatbot_demo from "./demos/chatbot_demo.mp4";
+import protal_demo from "./demos/portal_demo.mp4";
+import chatbot2 from "./projects/chatbot_slots.png";
+import chatbot3 from "./projects/dynamodb_appointments.png";
+import protal1 from "./projects/download.png";
+import protal2 from "./projects/report_imgFile.jpg";
+import protal3 from "./projects/adminDashboard.png";
+import inss1 from "./projects/inss1.png";
+import inss2 from "./projects/inss2.png";
+import inss3 from "./projects/inss3.png";
+import gcit1 from "./projects/gcit1.png";
+import gcit2 from "./projects/gcit2.png";
+import gcit3 from "./projects/gcit3.png";
+import insspress from "./LOGO3.png";
+import conference from "./logo.png";
+import EpicOne from "./EpicOne.png";
 export {
   apci,
   avondx,
@@ -87,5 +104,22 @@ export {
   bci,
   healthcare,
   wimtach,
-  Centennial
+  Centennial,
+  chatbot1,
+  chatbot_demo,
+  protal_demo,
+  chatbot2,
+  chatbot3,
+  protal1,
+  protal2,
+  protal3,
+  inss1,
+  inss2,
+  inss3,
+  gcit1,
+  gcit2,
+  gcit3,
+  insspress,
+  conference,
+  EpicOne,
 };
