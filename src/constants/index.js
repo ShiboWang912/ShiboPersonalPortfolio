@@ -144,7 +144,7 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Freelance CTO",
+    title: "Freelance Application Engineer",
     company_name: "INSS Press",
     icon: insspress, 
     iconBg: "#1f2937",
