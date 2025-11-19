@@ -18,9 +18,7 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import timhortons from "./company/timhortons.png";
 import OPS from "./company/OPS.png";
-import xty from "./company/xty.png";
 
 import mealDiary from "./mealDiary.png";
 import incident from "./incident.png";
@@ -86,9 +84,7 @@ export {
   tailwind,
   typescript,
   threejs,
-  timhortons,
   OPS,
-  xty,
   mealDiary,
   incident,
   hr,

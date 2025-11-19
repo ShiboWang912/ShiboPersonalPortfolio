@@ -9,6 +9,7 @@ import {
   Tech,
   Works,
   StarsCanvas,
+  ChatWidget,
 } from "./components";
 
 const App = () => {
@@ -23,6 +24,7 @@ const App = () => {
         <Experience />
         <Contact />
         <StarsCanvas />
+        <ChatWidget />
       </div>
     </BrowserRouter>
   );
